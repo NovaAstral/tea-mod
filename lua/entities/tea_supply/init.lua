@@ -53,7 +53,7 @@ function ENT:Initialize()
 		phys:SetMass(100)
 		phys:EnableGravity(true)
 		phys:Wake()
-		phys:EnableMotion(false)
+		phys:EnableMotion(true)
 	end
 end
 
@@ -72,7 +72,7 @@ function ENT:Use(ply)
 			self:MakeTea(true,3.9,true)
 		elseif(number == 4) then
 			self.TeaSound = self.Sounds.GarakTea
-			self:MakeTea(false,5.2	,true)
+			self:MakeTea(false,5.2,true)
 		elseif(number == 5) then
 			self.TeaSound = self.Sounds.KlingonTea
 			self:MakeTea(true,3,true)
