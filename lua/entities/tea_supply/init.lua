@@ -161,27 +161,6 @@ function ENT:MakeTea(explode,delay,maketea)
 	end
 end
 
-function ENT:Splode() --Explode the entity
-	if(!self.Exploded) then
-		self.Exploded = true
-
-		timer.Create("ResDep_Explode1",1,3,function() --3 Small Explosions
-			self.Entity:EmitSound("phx/explode06.wav",80,100,1)
-
-			util.BlastDamage(self.Entity,self.Entity,self.Entity:GetPos(),250,25)
-		
-			--This is a function from my (Nova Astral) lib
-			NEasyEffect(self.Entity:GetPos(),self.Entity:GetPos(),20,"HelicopterMegaBomb")
-		end)
-
-		timer.Create("ResDep_Explode2",5,1,function() --main explosion
-			
-
-			
-		end)
-	end
-end
-
 function ENT:PreEntityCopy()
 	if WireAddon then
 		duplicator.StoreEntityModifier(self,"WireDupeInfo",WireLib.BuildDupeInfo(self.Entity))
@@ -197,6 +176,5 @@ function ENT:PostEntityPaste(ply, ent, createdEnts)
 end
 
 function ENT:OnRemove()
-	timer.Stop("ResDep_Explode1")
-	timer.Stop("ResDep_Explode2")
+	timer.Stop("TeaSupply_TeaExplode")
 end
