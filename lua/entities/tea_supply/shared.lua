@@ -8,4 +8,3 @@ ENT.Purpose			= "it gives you tea"
 ENT.Instructions	= "press EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
 
 ENT.Spawnable			= true
-ENT.AdminSpawnable		= true
